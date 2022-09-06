@@ -1,0 +1,136 @@
+let rev = 0;
+let num = 12345;
+let lastDigit;
+
+while(num != 0){
+	lastDigit = num % 10;
+  rev = rev * 10 + lastDigit;
+  num = Math.floor(num/10);
+}
+
+console.log("Reverse number : "+rev);
+
+// Q.2 PALINDROME NUM IR NOT
+// function to check palindrome
+function checkPalindrome(str) {
+    
+    // applying split, revere and join
+    const reversedString = str.split('').reverse().join('');
+    if(str === reversedString)
+          return true;
+    else
+          return false;
+}
+
+let result = checkPalindrome("MADAM MADAM")
+if(result == true){
+	console.log("The given string is Palindrome");
+}
+else{
+  	console.log("The given string is NOT Palindrome");
+}
+// Q.3 Combination of String
+const Combinations = (str) =>{
+let combinations = [];
+for(let i = 0 ;i < str.length; i++){
+        for(let j = i + 1; j< str.length + 1; j++){
+            combinations.push(str.slice(i , j));
+        }
+}
+   return combinations;
+}
+
+console.log(Combinations('Dog'));
+
+// Q.4 Passsed Strings In Alphabetic Order Conversion
+
+  function alpha(str) {
+
+    var arr = str.split(""); // splits the string
+
+    res = arr.sort().join(""); // sort the array and joins to form a string
+
+    return res; // returns the result
+
+  }
+
+  console.log("Passing String");
+
+  console.log(alpha("Saylani Mobile And WebWeb"));
+// Q.5 Capitalize the first letter
+function capitalizeFirstLetter(str) {
+
+    // converting first letter to uppercase
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+
+    return capitalized;
+}
+
+// take input
+const string = prompt('Enter a string: ');
+
+result = capitalizeFirstLetter(string);
+
+console.log(result);
+
+// Q.7 program to count the number of vowels in a string
+
+function countVowel(str) { 
+
+    // find the count of vowels
+    const count = str.match(/[aeiou]/gi).length;
+
+    // return number of vowels
+    return count;
+}
+
+// take input
+const strg = prompt('Enter a string: ');
+
+
+result = countVowel(strg);
+
+console.log(result);
+
+// Q.8 Prime Or Not
+function test_prime(n)
+{
+
+  if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
+console.log(test_prime(7));
+
+// Q.10 Second Largest 
+function findSecondLargestElem(arr){
+    let first = -1 , second = -1;
+
+    for(let i = 0; i <= arr.length-1; i++){
+        if(arr[i] > first){
+            second = first;
+            first = arr[i];
+        }
+        else if( arr[i] > second && arr[i] != first){
+            second = arr[i];
+        }
+    }
+    console.log(second);
+}
+let arr = [12, 35, 1, 10, 34, 1]
+findSecondLargestElem(arr);
